@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- Struts2配置文件的根元素 -->
+<struts>
+    <!-- 配置了系列常量 -->
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    <!--禁止动态调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <!--开发模式，显示详细报错信息 -->
+    <constant name="struts.devMode" value="true"/>
+    <!--主题-->
+    <constant name="struts.ui.theme" value="simple"/>
+    <!--只能访问后缀只能是action-->
+    <constant name="struts.action.extension" value="action"/>
+
+    <!-- 简单页面跳转   -->
+    <package name="controller" namespace="/test" extends="struts-default">
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
+        <action name="hello" class="maxinhai.controller.SalesRecordController" method="hello">
+            <result name="SUCCESS">/index.jsp</result>
+        </action>
+
+        <action name="error" class="maxinhai.controller.SalesRecordController" method="error">
+            <result name="SUCCESS">/error.jsp</result>
+        </action>
+
+        <action name="success" class="maxinhai.controller.SalesRecordController" method="success">
+            <result name="SUCCESS">/success.jsp</result>
+        </action>
+
+        <action name="helloMap" class="maxinhai.controller.SalesRecordController" method="helloMap">
+        </action>
+
+        <action name="helloList" class="maxinhai.controller.SalesRecordController" method="helloList">
+        </action>
+
+        <action name="helloObject" class="maxinhai.controller.SalesRecordController" method="helloObject">
+        </action>
+    </package>
+</struts>
